@@ -1,2 +1,4 @@
 FROM nginx:alpine
-COPY /common /maze /third-party maze.html /usr/share/nginx/html/
+
+WORKDIR /usr/share/nginx/html/
+COPY . .
