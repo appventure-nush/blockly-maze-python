@@ -1,2 +1,2 @@
 FROM nginx:alpine
-COPY index.html /usr/share/nginx/html/index.html
+COPY maze.html /usr/share/nginx/html/maze.html
