@@ -1,5 +1,3 @@
 FROM nginx:alpine
-
-WORKDIR /usr/share/nginx/html/
-COPY maze.html /data/www/index.html
-ADD maze.html /data/www/index.html
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY maze.html /usr/share/nginx/html/index.html
