@@ -1,0 +1,21 @@
+version: 2
+
+networks:
+  primary:
+    external:
+      name: primary
+
+services:
+  website:
+    image: appventure.nushigh.edu.sg/blockly-maze-python:latest	
+    restart: always
+    networks:
+    - primary
+    labels:
+    - "traefik.enable=true"
+    - "traefik.frontend.rule=Host:appventure.nushigh.edu.sg;PathPrefixStrip:/blockly"
+    - "traefik.frontend.entryPoints=https"
+    - "traefik.port=80"
+    - "traefik.docker.network=primary"
+
+# vim: noai:ts=2:sw=2
