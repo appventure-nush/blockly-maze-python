@@ -2,9 +2,10 @@
 // Single-language bootloader.
 (function() {
   // Application path.
-  var appName = location.pathname.match(/\/([-\w]+)(\.html)?$/);
-  appName = appName ? appName[1].replace('-', '/') : 'index';
-
+  //var appName = location.pathname.match(/\/([-\w]+)(\.html)?$/);
+  //appName = appName ? appName[1].replace('-', '/') : 'index';
+  var appName = "maze";
+  
   // Only one language.
   var lang = 'en';
   window['BlocklyGamesLanguages'] = [lang];
