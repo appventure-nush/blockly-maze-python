@@ -1,8 +1,0 @@
-pipeline:
-  publish:
-    image: plugins/docker
-    registry: registry:5000
-    insecure: true
-    repo: registry:5000/blockly-maze-python
-    tags:
-      - latest

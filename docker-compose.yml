@@ -6,16 +6,17 @@ networks:
       name: primary
 
 services:
-  website:
-    image: appventure.nushigh.edu.sg/blockly-maze-python:latest	
+  web:
+    image: registry.nush.app/blockly-maze-python:latest
     restart: always
     networks:
     - primary
+    expose:
+    - "80"
+    - "443:443"
     labels:
     - "traefik.enable=true"
-    - "traefik.frontend.rule=Host:appventure.nushigh.edu.sg;PathPrefixStrip:/blockly"
-    - "traefik.frontend.entryPoints=https"
-    - "traefik.port=80"
-    - "traefik.docker.network=primary"
-
-# vim: noai:ts=2:sw=2
+    - "traefik.http.routers.blockly.rule=Host(`blockly.nush.app`)"
+    - "traefik.http.routers.blockly.entrypoints=https"
+    - "traefik.http.routers.blockly.tls=true"
+    - "traefik.http.routers.blockly.tls.certresolver=tlsresolver"
