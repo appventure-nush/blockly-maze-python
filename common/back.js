@@ -28,5 +28,5 @@
   // Append the language.
   var IS_HTML = !!window.location.pathname.match(/\.html$/);
   document.getElementById('back').href =
-      (IS_HTML ? 'index.html' : '/') + location.search;
+      (IS_HTML ? 'end.html' : '/') + location.search;
 })();
